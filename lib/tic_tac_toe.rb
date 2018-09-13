@@ -30,7 +30,7 @@ end
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
-
+# takes player input and puts value on board if move is valid
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
