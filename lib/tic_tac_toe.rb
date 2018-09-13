@@ -29,11 +29,11 @@ end
 
 # takes player input and puts value on board if move is valid
 def turn(board)
-  if draw?(board)
-    puts "Cat's Game!"
-  elsif over?(board)  
-    puts "Congratulations #{winner(board)}!"
-  else
+  # if draw?(board)
+  #   puts "Cat's Game!"
+  # elsif over?(board)  
+  #   puts "Congratulations #{winner(board)}!"
+  # else
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -44,7 +44,7 @@ def turn(board)
     else
       turn(board)
     end
-  end
+  # end
 end
 
 #play loop 
