@@ -42,10 +42,10 @@ end
 
 #play loop 
 def play(board)
-    while !over?(board) do
+    while !over?(board)
     turn(board)
   end
-  if !draw(board)
+  if !draw?(board)
     puts "Congratulations #{winner?(board)}!"
   else
     puts "Cat's Game!"
