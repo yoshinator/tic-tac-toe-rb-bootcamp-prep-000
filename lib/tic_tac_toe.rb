@@ -43,6 +43,7 @@ def turn(board)
   end
 end
 
+#play loop until 8 moves pass
 def play(board)
   i = 0 
   until i > 8 
