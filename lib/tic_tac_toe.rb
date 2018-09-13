@@ -119,6 +119,7 @@ def player_move(board, index)
   board[index] = current_player(board)
 end
 
+
 def turn_count(board)
   counter = 0
   board.each do |token| 
