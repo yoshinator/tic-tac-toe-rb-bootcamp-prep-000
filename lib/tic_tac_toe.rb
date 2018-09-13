@@ -130,7 +130,7 @@ def turn_count(board)
   counter
 end
 
-
+#Returns X or O for who the current player is. This method is called after a number has supplied by the user. It is used by the #player_move method.
 def current_player(board)
   if (turn_count(board) + 1) %2 == 0
     "O"
