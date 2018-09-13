@@ -1,12 +1,12 @@
 BOARD = ["X"," ","X"," ","X"," ","O ","O"," "]
 WIN_COMBINATIONS =[
-    [0,1,2], #top row 
+    [0,1,2], #top row
     [3,4,5],
-    [6,7,8], 
+    [6,7,8],
     [0,3,6],  #left Column
-    [1,4,7], 
-    [2,5,8], 
-    [0,4,8], #left diagnol 
+    [1,4,7],
+    [2,5,8],
+    [0,4,8], #left diagnol
     [2,4,6]
   ]
 
@@ -23,10 +23,6 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def move(board, index, current_player = "X")
-  board[index] = current_player
-end
-
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
@@ -36,7 +32,8 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
-    move(board, index)
+    token = current_player(board)
+    player_move(board, index, token)
     display_board(board)
   else
     turn(board)
@@ -45,10 +42,8 @@ end
 
 #play loop until 8 moves pass
 def play(board)
-  i = 0 
-  until i > 8 
+    while !over?(board)
     turn(board)
-     i+=1
   end
 end
 
@@ -75,15 +70,15 @@ def won?(board)
     return  combination
     end
   end
-nil
+  nil
 end
 
 #if all elements of board have a token that = X or O return true for a draw else game is in progress
 def full?(board)
   if board.all?{|token| token == "X" || token =="O"}
     true #if all elements of board have a token that = X or O return true for a draw
-  else 
-    false  #game is in progress 
+  else
+    false  #game is in progress
   end
 end
 
@@ -96,7 +91,7 @@ def draw?(board)
   end
 end
 
-#returns true if game is a draw or someone won 
+#returns true if game is a draw or someone won
 def over?(board)
   if draw?(board) || won?(board)
     true
@@ -111,10 +106,9 @@ def winner(board)
   if won?(board)
    board[won?(board)[0]]
   end
-end  
+end
 
-
-#takes a board and index and puts current_player in board's index, the index is the number supplied by the player from 1-9. Will be called after we receive a player's input. Board is updated in this method with the number (index) supplied by the player.Use #current_player for last argument 
+#takes a board and index and puts current_player in board's index, the index is the number supplied by the player from 1-9. Will be called after we receive a player's input. Board is updated in this method with the number (index) supplied by the player.Use #current_player for last argument
 def player_move(board, index, current_player_token)
   board[index] = current_player_token
 end
@@ -122,7 +116,7 @@ end
 #turn_count returns the number of plays that have been made. It is the number of X's and O's on the board
 def turn_count(board)
   counter = 0
-  board.each do |token| 
+  board.each do |token|
     if token == "X" || token =="O"
       counter +=1
     end
@@ -136,18 +130,16 @@ def current_player(board)
     "O"
   else
     "X"
-  end 
-end 
-
+  end
+end
 
 #same as turn_count not needed
 def number_of_turns_taken(board)
   counter = 0
-  board.each do |token| 
+  board.each do |token|
     if token == "X" || token =="O"
       counter +=1
     end
   end
   counter
 end
-
