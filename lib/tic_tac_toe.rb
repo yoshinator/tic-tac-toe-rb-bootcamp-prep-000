@@ -1,3 +1,14 @@
+BOARD = ["X","X","X","X","X","X","O ","O","X"]
+WIN_COMBINATIONS =[
+    [0,1,2], #top row 
+    [3,4,5],
+    [6,7,8], 
+    [0,3,6],  #left Column
+    [1,4,7], 
+    [2,5,8], 
+    [0,4,8], #left diagnol 
+    [2,4,6]
+  ]
 
 # Helper Methods
 def display_board(board)
@@ -14,10 +25,6 @@ end
 
 def move(board, index, current_player = "X")
   board[index] = current_player
-end
-
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
 end
 
 def valid_move?(board, index)
@@ -47,31 +54,6 @@ end
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
-
-# Define your WIN_COMBINATIONS constant
-BOARD = ["X","X","X","X","O","X"," ","O","X"]
-WIN_COMBINATIONS =[
-    [0,1,2], #top row 
-    [3,4,5],
-    [6,7,8], 
-    [0,3,6],  #left Column
-    [1,4,7], 
-    [2,5,8], 
-    [0,4,8], #left diagnol 
-    [2,4,6]
-  ]
-
-# def ind(board)
-#   sam = []
-#   counter = 0 
-#   board.each do |index|
-#     if index == "X"
-#       sam.push(counter)
-#     end
-#     counter+=1
-#   end
-#   sam
-# end
 
 def won?(board)
   sam_ex = []
@@ -124,9 +106,7 @@ def winner(board)
    board[won?(board)[0]]
   end
 end  
-
-
-#Judson like carbs
+#same as turn_count
 def number_of_turns_taken(board)
   counter = 0
   board.each do |token| 
@@ -136,3 +116,31 @@ def number_of_turns_taken(board)
   end
   counter
 end
+
+
+# does not allow for a default third argument
+# takes three arguments: board, position, and player token
+# allows "X" player in the bottom right and "O" in the top left 
+#player_move
+def player_move(board, index, current_player)
+  board[index] = current_player
+end
+
+def turn_count(board)
+  counter = 0
+  board.each do |token| 
+    if token == "X" || token =="O"
+      counter +=1
+    end
+  end
+  counter
+end
+
+def current_player(board)
+  turn_count(board)
+  if turn_count(board) %2 == 0
+    "O"
+  else
+    "X"
+  end 
+end 
