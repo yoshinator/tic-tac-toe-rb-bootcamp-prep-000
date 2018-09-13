@@ -32,7 +32,7 @@ def turn(board)
   if draw?(board)
     puts "Cat's Game!"
   elsif over?(board)  
-    puts "Congratulations #{winner?(board)}!"
+    puts "Congratulations #{winner(board)}!"
   else
     puts "Please enter 1-9:"
     input = gets.strip
