@@ -42,7 +42,7 @@ end
 
 #play loop 
 def play(board)
-    while !over?(board)
+    while !over?(board) do
     turn(board)
   end
   if !draw(board)
