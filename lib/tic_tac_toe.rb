@@ -95,7 +95,8 @@ def draw?(board)
     false
   end
 end
-  
+
+#returns true if game is a draw or someone won 
 def over?(board)
   if draw?(board) || won?(board)
     true
