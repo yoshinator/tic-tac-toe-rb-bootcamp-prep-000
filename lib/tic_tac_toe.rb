@@ -115,7 +115,7 @@ end
 
 
 #takes a board and index and puts current_player in board's index, the index is the number supplied by the player from 1-9. Will be called after we receive a player's input. Board is updated in this method with the number (index) supplied by the player.
-def player_move(board, index)
+def player_move(board, index, x_or_o)
   board[index] = current_player(board)
 end
 
