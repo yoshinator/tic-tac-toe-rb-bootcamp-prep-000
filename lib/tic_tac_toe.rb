@@ -113,22 +113,8 @@ def winner(board)
   end
 end  
 
-#same as turn_count
-def number_of_turns_taken(board)
-  counter = 0
-  board.each do |token| 
-    if token == "X" || token =="O"
-      counter +=1
-    end
-  end
-  counter
-end
 
-
-# does not allow for a default third argument
-# takes three arguments: board, position, and player token
-# allows "X" player in the bottom right and "O" in the top left 
-#player_move
+#takes a board and index and a current_player and puts current_player in board's index
 def player_move(board, index, current_player)
   board[index] = current_player
 end
@@ -150,3 +136,16 @@ def current_player(board)
     "X"
   end 
 end 
+
+
+#same as turn_count not needed
+def number_of_turns_taken(board)
+  counter = 0
+  board.each do |token| 
+    if token == "X" || token =="O"
+      counter +=1
+    end
+  end
+  counter
+end
+
