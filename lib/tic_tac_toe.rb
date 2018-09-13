@@ -45,7 +45,10 @@ def play(board)
     while !over?(board)
     turn(board)
   end
-  win
+  if !draw(board)
+    puts "Congratulations #{winner?(board)}!"
+  else
+    puts "Cat's Game!"
 end
 
 #lets you know if a position is taken
