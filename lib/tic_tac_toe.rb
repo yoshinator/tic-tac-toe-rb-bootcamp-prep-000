@@ -52,10 +52,12 @@ def play(board)
   end
 end
 
+#lets you know if a position is taken
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+#returns the wining combination array
 def won?(board)
   sam_ex = []
   sam_oh = []
