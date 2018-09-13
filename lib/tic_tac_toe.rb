@@ -49,6 +49,7 @@ def play(board)
     puts "Congratulations #{winner?(board)}!"
   else
     puts "Cat's Game!"
+  end
 end
 
 #lets you know if a position is taken
