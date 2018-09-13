@@ -57,6 +57,7 @@ def play(board)
   else over?(board)  
     puts "Congratulations #{winner(board)}!"
 end
+end
 
 #lets you know if a position is taken
 def position_taken?(board, index)
