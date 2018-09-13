@@ -40,7 +40,7 @@ def turn(board)
   end
 end
 
-#play loop until 8 moves pass
+#play loop 
 def play(board)
     while !over?(board)
     turn(board)
