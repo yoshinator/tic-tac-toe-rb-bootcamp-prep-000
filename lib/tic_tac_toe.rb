@@ -140,6 +140,9 @@ def current_player(board)
 end 
 
 
+
+
+
 #same as turn_count not needed
 def number_of_turns_taken(board)
   counter = 0
