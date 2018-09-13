@@ -57,7 +57,7 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
-#returns the wining combination array
+#returns the wining combination array or nil if no winner
 def won?(board)
   sam_ex = []
   sam_oh = []
@@ -78,7 +78,7 @@ def won?(board)
 nil
 end
 
-
+#if all elements of board have a token that = X or O return true for a draw else game is in progress
 def full?(board)
   if board.all?{|token| token == "X" || token =="O"}
     true #if all elements of board have a token that = X or O return true for a draw
