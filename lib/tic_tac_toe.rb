@@ -114,9 +114,9 @@ def winner(board)
 end  
 
 
-#takes a board and index and a current_player and puts current_player in board's index, the index is the number supplied by the player from 1-9
-def player_move(board, index, current_player)
-  board[index] = current_player
+#takes a board and index and puts current_player in board's index, the index is the number supplied by the player from 1-9. Will be called after we receive a player's input. Board is updated in this method with the number (index) supplied by the player.
+def player_move(board, index)
+  board[index] = current_player(board)
 end
 
 def turn_count(board)
@@ -128,6 +128,7 @@ def turn_count(board)
   end
   counter
 end
+
 
 def current_player(board)
   if (turn_count(board) + 1) %2 == 0
