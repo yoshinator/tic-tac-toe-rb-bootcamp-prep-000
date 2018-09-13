@@ -1,4 +1,4 @@
-BOARD = ["X","X","X","X","X","X","O ","O","X"]
+BOARD = ["X"," ","X"," ","X"," ","O ","O"," "]
 WIN_COMBINATIONS =[
     [0,1,2], #top row 
     [3,4,5],
