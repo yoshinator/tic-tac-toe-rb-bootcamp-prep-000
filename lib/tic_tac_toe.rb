@@ -105,12 +105,14 @@ def over?(board)
   end
 end
 
+#returns an X or an O depending on which one won
 def winner(board)
   won?(board)
   if won?(board)
    board[won?(board)[0]]
   end
 end  
+
 #same as turn_count
 def number_of_turns_taken(board)
   counter = 0
