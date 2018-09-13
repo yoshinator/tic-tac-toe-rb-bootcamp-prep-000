@@ -87,6 +87,7 @@ def full?(board)
   end
 end
 
+#returns true if the game ended in a draw
 def draw?(board)
   if full?(board) && !won?(board)
     true
