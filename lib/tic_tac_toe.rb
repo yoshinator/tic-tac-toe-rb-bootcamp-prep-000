@@ -119,7 +119,7 @@ def player_move(board, index)
   board[index] = current_player(board)
 end
 
-
+#turn_count returns the number of plays that have been made
 def turn_count(board)
   counter = 0
   board.each do |token| 
