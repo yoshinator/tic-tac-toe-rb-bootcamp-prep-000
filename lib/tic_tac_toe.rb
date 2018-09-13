@@ -45,6 +45,7 @@ def play(board)
     while !over?(board)
     turn(board)
   end
+  win
 end
 
 #lets you know if a position is taken
