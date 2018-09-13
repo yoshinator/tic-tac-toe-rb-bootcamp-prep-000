@@ -114,7 +114,7 @@ def winner(board)
 end  
 
 
-#takes a board and index and a current_player and puts current_player in board's index
+#takes a board and index and a current_player and puts current_player in board's index, the index is the number supplied by the player from 1-9
 def player_move(board, index, current_player)
   board[index] = current_player
 end
